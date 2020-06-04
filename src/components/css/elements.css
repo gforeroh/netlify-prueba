@@ -1,0 +1,13 @@
+button.btn__custom {
+    border-radius: 1rem;
+    background-color: #94c11f;
+    color: white;
+    font-weight: bold;
+}
+
+button.btn__custom-primary, a.btn__custom-primary {
+    border-radius: 1rem;
+    background-color: #00ace2;
+    color: white;
+    font-weight: bold;
+}

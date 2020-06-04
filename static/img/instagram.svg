@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="46.555" height="45.462" viewBox="0 0 46.555 45.462">
+    <defs>
+        <filter id="prefix__Trazado_1" width="46.555" height="45.462" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__instagram-logo" transform="translate(9 6)">
+        <g transform="translate(-9 -6)">
+            <path id="prefix__Trazado_1-2" d="M20.675 0H7.88A7.743 7.743 0 000 7.579v12.305a7.742 7.742 0 007.88 7.579h12.795a7.743 7.743 0 007.88-7.579V7.579A7.743 7.743 0 0020.675 0zm5.347 19.884a5.253 5.253 0 01-5.347 5.142H7.88a5.253 5.253 0 01-5.346-5.142V7.579A5.253 5.253 0 017.88 2.437h12.795a5.253 5.253 0 015.347 5.142v12.305z" class="prefix__cls-1" data-name="Trazado 1" transform="translate(9 6)"/>
+        </g>
+        <path id="prefix__Trazado_2" d="M48.326 40.97a7.082 7.082 0 107.358 7.076 7.229 7.229 0 00-7.358-7.076zm0 11.716a4.643 4.643 0 114.824-4.639 4.74 4.74 0 01-4.824 4.639z" class="prefix__cls-1" data-name="Trazado 2" transform="translate(-34.048 -34.315)"/>
+        <path id="prefix__Trazado_3" d="M120.779 28.251a1.9 1.9 0 00-1.312.523 1.737 1.737 0 000 2.528 1.91 1.91 0 002.626 0 1.74 1.74 0 000-2.528 1.9 1.9 0 00-1.314-.523z" class="prefix__cls-1" data-name="Trazado 3" transform="translate(-98.835 -23.662)"/>
+    </g>
+</svg>

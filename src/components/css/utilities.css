@@ -1,0 +1,165 @@
+.html p {
+    margin-bottom: 0;
+}
+
+.container.container-max {
+    max-width: 1400px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.invalid-feedback {
+    color: red !important;
+}
+
+/* CAROUSEL */
+.carousel .slide {
+    background: none !important;
+}
+
+/* BOOTSTRAP UTILITIES */
+.bg-light {
+    background-color: #efefef !important;
+}
+
+/* CUSTOM CSS */
+.c-pointer {
+    cursor: pointer !important;
+}
+
+.c-pointer.opacity:hover {
+    opacity: .8;
+}
+
+.c-pointer.opacity-sh:hover {
+    opacity: .8;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+/* procedures */
+
+#procedures .item-image:hover {
+    filter: blur(5px);
+}
+
+/* ellipsis */
+.text-ellipsis {
+  display: block;
+    display: -webkit-box;
+    height: 16px * 1.4 * 3;
+    font-size: 16px;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.text-ellipsis-sm {
+    display: block;
+    display: -webkit-box;
+    height: 16px * 1.2 * 2;
+    font-size: 16px;
+    line-height: 1.2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+/* IMAGES */
+
+.photo-frame {
+    top: 40px;
+    left: -23px;
+    width: 100%;
+    height: 95% !important;
+    border-radius: 33px;
+    z-index: -1;
+    background-color: #d8e500;
+}
+
+.bullet-point {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #007387;
+}
+
+/* COLORS */
+
+.color-1 {
+    color: #45a4fd !important;
+}
+
+.bg-1 {
+    background-color: #45a4fd !important;
+}
+
+.color-2 {
+    color: #263441 !important;
+}
+
+.bg-2 {
+    background-color: #263441 !important;
+}
+
+.bg-2-light {
+    background-color: #1d466d !important;
+}
+
+.color-3 {
+    color: #47ad19 !important;
+}
+
+.bg-3 {
+    background-color: #47ad19 !important;
+}
+
+.contorn {
+    border: 6px solid #ff7060 !important;
+}
+
+.pointer {
+    opacity: 1;
+}
+
+.pointer:hover {
+    font-weight: bold;
+}
+
+a.unlink:link{
+    text-decoration:none;
+}
+
+
+/* BUTTONS */
+
+.btn-outline-primary {
+    border: 2px solid;
+    border-color: white;
+    border-radius: 2px;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: inherit;
+}
+
+.btn-3 {
+    border: 2px solid;
+    border-color: #47ad19;
+    border-radius: 2px;
+    color: #47ad19;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.btn-3:hover {
+    border-color: #47ad19;
+    color: #47ad19;
+    font-weight: bold;
+}

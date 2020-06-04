@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56.5" height="44.057" viewBox="0 0 56.5 44.057">
+    <defs>
+        <filter id="prefix__XMLID_823_" width="56.5" height="44.057" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dy="3"/>
+            <feGaussianBlur result="blur" stdDeviation="3"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="prefix__XMLID_822_">
+        <path id="prefix__XMLID_823_2" d="M37 48.154c-1.39-1.589-3.956-2.237-8.856-2.237H10.356c-5.012 0-7.622.69-9.006 2.381C0 49.948 0 52.378 0 55.741v6.41c0 6.515 1.6 9.824 10.356 9.824h17.788c4.249 0 6.6-.572 8.127-1.974 1.562-1.438 2.229-3.785 2.229-7.85v-6.41c0-3.547-.1-5.991-1.5-7.587zM24.717 59.831l-8.077 4.06a1.286 1.286 0 01-1.219-.037 1.186 1.186 0 01-.6-1.022v-8.094a1.185 1.185 0 01.6-1.021 1.285 1.285 0 011.217-.039l8.077 4.034a1.174 1.174 0 010 2.119z" data-name="XMLID_823_" transform="translate(9 -39.92)" style="fill:#fff"/>
+    </g>
+</svg>

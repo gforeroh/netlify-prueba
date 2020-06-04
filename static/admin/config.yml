@@ -1,0 +1,310 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Imagen previa al blog", name: "featuredimage", widget: image}
+      - {label: "Texto alternativo", name: altFeatured, widget: string}
+      - {label: "Resumen previo al blog", name: "description", widget: "text"}
+      - {label: "Titulo del blog", name: "title", widget: "string"}
+      - {label: "Fecha", name: "date", widget: "datetime"}
+      - {
+          label: "Autor", name: "author", widget: "object", 
+            fields: [{
+              label: "Nombre", name: "name", widget: "string"
+            }, 
+            {
+              label: "Foto pequeña del autor", name: "photo", widget: image
+            },
+            {
+              label: "Foto con degradado del autor", name: "photoBig", widget: image
+            },
+            {
+              label: "Texto alternativo", name: alt, widget: string
+            }]
+        }
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Imagen de portada (imagen mostrada en detalle del blog)", name: "coverImage", widget: image}
+      - {label: "Texto alternativo", name: altCover, widget: string}
+      - {label: "Imagen a mostrar en la página de blog", name: "listImage", widget: image}
+      - {label: "Texto alternativo", name: altList, widget: string}
+      - {label: "Contenido", name: "body", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list"}
+    
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - file: "src/pages/blog-page/index.md"
+        label: "Página de lista de posts"
+        name: "blog-page"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-page"}
+          - {label: "Título", name: "title", widget: "string"}
+          - {label: "Descripción", name: "desc", widget: "markdown"}
+      
+
+      - file: "src/pages/about-us/index.md"
+        label: "Página de la empresa"
+        name: "about-us"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-us"}
+          - {label: "Sección 1", name: "section1", widget: object, 
+              fields: [
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Descripción", name: "desc", widget: "markdown"},
+                {label: "Columnas", name: "columns", widget: object, 
+                  fields: [
+                    {label: "Columna #1", name: "column1", widget: markdown},
+                    {label: "Columna #2", name: "column2", widget: markdown}
+                  ]
+                }
+              ]
+            }
+          - {label: "Sección 2", name: "section2", widget: object, 
+              fields: [
+                {label: "Título", name: "title1", widget: "string"},
+                {label: "Descripción 1", name: "desc1", widget: "markdown"},
+                {label: "Galería de imágenes", name: "gallery", widget: list, 
+                  fields: [
+                    {label: "Imagen para resolución grande", name: "image", widget: image}, 
+                    {label: "Imagen para resolución pequeña", name: "imageSm", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                },
+                {label: "Título 2", name: "title2", widget: markdown},
+                {label: "Descripción 2", name: "desc2", widget: markdown},
+              ]
+            }
+          - {label: "Sección 3", name: "section3", widget: object, 
+              fields: [
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Personajes", name: "gallery", widget: list, 
+                  fields: [
+                    {label: "Foto para resolución grande", name: "image", widget: image}, 
+                    {label: "Foto para resolución pequeña", name: "imageSm", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string},
+                    {label: "Nombre", name: name, widget: string},
+                    {label: "Cargo o posición", name: position, widget: string},
+                    {
+                      label: "Redes sociales", name: "socials", widget: "object",
+                      fields: [{
+                        label: "Instagram", name: "instagram", widget: "string", required: false
+                      }, {
+                        label: "Facebook", name: "facebook", widget: "string", required: false
+                      }, {
+                        label: "Twitter", name: "twitter", widget: "string", required: false
+                      }, {
+                        label: "Linkedin", name: "linkedin", widget: "string", required: false
+                      }]
+                    }
+                  ]
+                }
+              ]
+            }
+          - {label: "Sección 4", name: "section4", widget: object, 
+              fields: [
+                {label: "Descripción 1", name: "desc1", widget: "string"},
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Descripción 2", name: "desc2", widget: "markdown"},
+                {label: "Oficinas", name: "offices", widget: list, 
+                  fields: [
+                    {label: "Nombre", name: "name", widget: string}, 
+                    {label: "Teléfono", name: "phone", widget: string}, 
+                    {label: "email", name: email, widget: string},
+                    {label: "dirección", name: address, widget: string}
+                  ]
+                }
+              ]
+            }
+      - file: "src/pages/lines-of-work/index.md"
+        label: "Página de líneas de trabajo"
+        name: "lines-of-work"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "line-of-work"}
+          - {label: "Título", name: "title", widget: "string"}
+          - {label: "Subtítulo", name: "subtitle", widget: "string"}
+          - {label: "Descripción", name: "desc", widget: "markdown"}
+          - {label: "Líneas de trabajo", name: "lines", widget: "list", 
+              fields: [
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen mostrada en Home", name: "image", widget: image}, 
+                    {label: "Imagen mostrada en página líneas de trabajo", name: "imagePage", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                },
+                {label: "Nombre", name: "name", widget: "string"},
+                {label: "Descripción corta", name: "desc", widget: "string"},
+                {label: "Descripción Larga", name: "descLarge", widget: "markdown"},
+              ]
+            }
+          - {label: "Sección 2", name: "section2", widget: "object", 
+              fields: [
+                {label: "Titulo de sección", name: "title", widget: string},
+                {label: "Descripción de sección", name: "desc", widget: markdown} 
+              ]
+            }
+          - {label: "Testimonios", name: "testimonials", widget: "list", 
+              fields: [
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                },
+                {label: "Nombre", name: "name", widget: "string"},
+                {label: "Red social", name: "social", widget: "object", 
+                  fields: [
+                    {label: "Nombre", name: "name", widget: string}, 
+                    {label: "url", name: url, widget: string}
+                  ]
+                },
+                {label: "Descripción", name: "desc", widget: "markdown"},
+              ]
+            }
+      - file: "src/pages/index.md"
+        label: "Página principal"
+        name: "landing"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "landing"}
+          - {
+            label: "Cabecera", name: "header", widget: "object", 
+              fields: [
+                {label: "Logo", name: "logo", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image}, 
+                    {label: "Texto alternativo a la imagen", name: alt, widget: string}
+                  ]
+                },
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image}, 
+                    {label: "Texto alternativo a la imagen", name: alt, widget: string}
+                  ]
+                },
+                {label: "Título", name: "title", widget: "markdown"},
+                {label: "Subtítulo", name: "subtitle", widget: "markdown"},
+                {label: "Descripción", name: "desc", widget: "markdown"},
+                {label: "Título del botón", name: "btnTitle", widget: "string", required: false, default: "Hablemos"}
+              ]
+            }
+          - {
+            label: "Sección 1", name: "section1", widget: "object", 
+              fields: [
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image},
+                    {label: "Imagen para móvil", name: "imageSm", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                },
+                {label: "Título", name: "title", widget: "markdown"},
+                {label: "Descripción", name: "desc", widget: "markdown"}
+              ]
+            }
+          - {
+            label: "Sección 2", name: "section2", widget: "object", 
+              fields: [
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Descripción", name: "desc", widget: "markdown"},
+                {label: "Clientes", name: "customers", widget: "list", 
+                  fields: [
+                    {label: "Image", name: "image", widget: "object", 
+                      fields: [
+                        {label: "Imagen", name: "image", widget: image}, 
+                        {label: "Texto alternativo", name: alt, widget: string}
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          - {
+            label: "Sección 4", name: "section4", widget: "object", 
+              fields: [
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Subtítulo", name: "subtitle", widget: "string"},
+                {label: "Descripción 1", name: "desc1", widget: "markdown"},
+                {label: "Descripción 2", name: "desc2", widget: "markdown"},
+                {label: "Autor", name: "author", widget: "object", 
+                  fields: [
+                    {label: "Nombre", name: "name", widget: "string"},
+                    {label: "Cargo", name: "position", widget: "string"}
+                  ]
+                },
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image}, 
+                    {label: "Imagen para móvil", name: "imageSm", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                }
+              ]
+            }
+
+          - {
+            label: "Sección 5", name: "section5", widget: "object", 
+              fields: [
+                {label: "Image", name: "image", widget: "object", 
+                  fields: [
+                    {label: "Imagen", name: "image", widget: image}, 
+                    {label: "Imagen para móvil", name: "imageSm", widget: image}, 
+                    {label: "Texto alternativo", name: alt, widget: string}
+                  ]
+                },
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Descripción", name: "desc", widget: "markdown"},
+                {label: "Partners", name: "partners", widget: "list", 
+                  fields: [
+                    {label: "Nombre", name: "name", widget: "string"},
+                    {label: "Image", name: "image", widget: "object", 
+                      fields: [
+                        {label: "Imagen", name: "image", widget: image}, 
+                        {label: "Texto alternativo", name: alt, widget: string}
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          - {
+            label: "Sección 6", name: "section6", widget: "object",
+              fields: [
+                {label: "Título", name: "title", widget: "string"},
+                {label: "Título del botón", name: "btnTitle", widget: "string"}
+              ]
+            }
+          - {
+            label: "Footer", name: "footer", widget: "object",
+              fields: [
+                {label: "Derechos de autor", name: "copyright", widget: "markdown"},
+                {
+                  label: "Redes sociales", name: "socials", widget: "object",
+                    fields: [{
+                      label: "Facebook", name: "facebook", widget: "string", required: false
+                    }, {
+                      label: "Instagram", name: "instagram", widget: "string", required: false
+                    }, {
+                      label: "Linkedin", name: "linkedin", widget: "string", required: false
+                    }, {
+                      label: "Twitter", name: "twitter", widget: "string", required: false
+                    }]
+                }
+              ]
+          }
